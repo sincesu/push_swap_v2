@@ -1,0 +1,496 @@
+valgrind --leak-check=full ./push_swap ""
+valgrind --leak-check=full ./push_swap " "
+valgrind --leak-check=full ./push_swap "   "
+valgrind --leak-check=full ./push_swap "a"
+valgrind --leak-check=full ./push_swap "1 a 2"
+valgrind --leak-check=full ./push_swap "1 2b 3"
+valgrind --leak-check=full ./push_swap "1 + 2"
+valgrind --leak-check=full ./push_swap "++1"
+valgrind --leak-check=full ./push_swap "--1"
+valgrind --leak-check=full ./push_swap "+-1"
+valgrind --leak-check=full ./push_swap "-+1"
+valgrind --leak-check=full ./push_swap "1 1"
+valgrind --leak-check=full ./push_swap "0 1 2 3 2"
+valgrind --leak-check=full ./push_swap "4 4 4"
+valgrind --leak-check=full ./push_swap "10 20 30 10"
+valgrind --leak-check=full ./push_swap "2147483648"
+valgrind --leak-check=full ./push_swap "-2147483649"
+valgrind --leak-check=full ./push_swap "99999999999999999999"
+valgrind --leak-check=full ./push_swap "-99999999999999999999"
+valgrind --leak-check=full ./push_swap "1 2 --3"
+valgrind --leak-check=full ./push_swap "+ 1 2"
+valgrind --leak-check=full ./push_swap "1 2 +3-"
+valgrind --leak-check=full ./push_swap "1 2 3 4  "
+valgrind --leak-check=full ./push_swap "   1   2 3"
+valgrind --leak-check=full ./push_swap "  1   -   2"
+valgrind --leak-check=full ./push_swap "--"
+valgrind --leak-check=full ./push_swap "++"
+./push_swap "0 1 2 3 4" | wc -l
+./push_swap "0 1 2 4 3" | wc -l
+./push_swap "0 1 3 2 4" | wc -l
+./push_swap "0 1 3 4 2" | wc -l
+./push_swap "0 1 4 2 3" | wc -l
+./push_swap "0 1 4 3 2" | wc -l
+./push_swap "0 2 1 3 4" | wc -l
+./push_swap "0 2 1 4 3" | wc -l
+./push_swap "0 2 3 1 4" | wc -l
+./push_swap "0 2 3 4 1" | wc -l
+./push_swap "0 2 4 1 3" | wc -l
+./push_swap "0 2 4 3 1" | wc -l
+./push_swap "0 3 1 2 4" | wc -l
+./push_swap "0 3 1 4 2" | wc -l
+./push_swap "0 3 2 1 4" | wc -l
+./push_swap "0 3 2 4 1" | wc -l
+./push_swap "0 3 4 1 2" | wc -l
+./push_swap "0 3 4 2 1" | wc -l
+./push_swap "0 4 1 2 3" | wc -l
+./push_swap "0 4 1 3 2" | wc -l
+./push_swap "0 4 2 1 3" | wc -l
+./push_swap "0 4 2 3 1" | wc -l
+./push_swap "0 4 3 1 2" | wc -l
+./push_swap "0 4 3 2 1" | wc -l
+./push_swap "1 0 2 3 4" | wc -l
+./push_swap "1 0 2 4 3" | wc -l
+./push_swap "1 0 3 2 4" | wc -l
+./push_swap "1 0 3 4 2" | wc -l
+./push_swap "1 0 4 2 3" | wc -l
+./push_swap "1 0 4 3 2" | wc -l
+./push_swap "1 2 0 3 4" | wc -l
+./push_swap "1 2 0 4 3" | wc -l
+./push_swap "1 2 3 0 4" | wc -l
+./push_swap "1 2 3 4 0" | wc -l
+./push_swap "1 2 4 0 3" | wc -l
+./push_swap "1 2 4 3 0" | wc -l
+./push_swap "1 3 0 2 4" | wc -l
+./push_swap "1 3 0 4 2" | wc -l
+./push_swap "1 3 2 0 4" | wc -l
+./push_swap "1 3 2 4 0" | wc -l
+./push_swap "1 3 4 0 2" | wc -l
+./push_swap "1 3 4 2 0" | wc -l
+./push_swap "1 4 0 2 3" | wc -l
+./push_swap "1 4 0 3 2" | wc -l
+./push_swap "1 4 2 0 3" | wc -l
+./push_swap "1 4 2 3 0" | wc -l
+./push_swap "1 4 3 0 2" | wc -l
+./push_swap "1 4 3 2 0" | wc -l
+./push_swap "2 0 1 3 4" | wc -l
+./push_swap "2 0 1 4 3" | wc -l
+./push_swap "2 0 3 1 4" | wc -l
+./push_swap "2 0 3 4 1" | wc -l
+./push_swap "2 0 4 1 3" | wc -l
+./push_swap "2 0 4 3 1" | wc -l
+./push_swap "2 1 0 3 4" | wc -l
+./push_swap "2 1 0 4 3" | wc -l
+./push_swap "2 1 3 0 4" | wc -l
+./push_swap "2 1 3 4 0" | wc -l
+./push_swap "2 1 4 0 3" | wc -l
+./push_swap "2 1 4 3 0" | wc -l
+./push_swap "2 3 0 1 4" | wc -l
+./push_swap "2 3 0 4 1" | wc -l
+./push_swap "2 3 1 0 4" | wc -l
+./push_swap "2 3 1 4 0" | wc -l
+./push_swap "2 3 4 0 1" | wc -l
+./push_swap "2 3 4 1 0" | wc -l
+./push_swap "2 4 0 1 3" | wc -l
+./push_swap "2 4 0 3 1" | wc -l
+./push_swap "2 4 1 0 3" | wc -l
+./push_swap "2 4 1 3 0" | wc -l
+./push_swap "2 4 3 0 1" | wc -l
+./push_swap "2 4 3 1 0" | wc -l
+./push_swap "3 0 1 2 4" | wc -l
+./push_swap "3 0 1 4 2" | wc -l
+./push_swap "3 0 2 1 4" | wc -l
+./push_swap "3 0 2 4 1" | wc -l
+./push_swap "3 0 4 1 2" | wc -l
+./push_swap "3 0 4 2 1" | wc -l
+./push_swap "3 1 0 2 4" | wc -l
+./push_swap "3 1 0 4 2" | wc -l
+./push_swap "3 1 2 0 4" | wc -l
+./push_swap "3 1 2 4 0" | wc -l
+./push_swap "3 1 4 0 2" | wc -l
+./push_swap "3 1 4 2 0" | wc -l
+./push_swap "3 2 0 1 4" | wc -l
+./push_swap "3 2 0 4 1" | wc -l
+./push_swap "3 2 1 0 4" | wc -l
+./push_swap "3 2 1 4 0" | wc -l
+./push_swap "3 2 4 0 1" | wc -l
+./push_swap "3 2 4 1 0" | wc -l
+./push_swap "3 4 0 1 2" | wc -l
+./push_swap "3 4 0 2 1" | wc -l
+./push_swap "3 4 1 0 2" | wc -l
+./push_swap "3 4 1 2 0" | wc -l
+./push_swap "3 4 2 0 1" | wc -l
+./push_swap "3 4 2 1 0" | wc -l
+./push_swap "4 0 1 2 3" | wc -l
+./push_swap "4 0 1 3 2" | wc -l
+./push_swap "4 0 2 1 3" | wc -l
+./push_swap "4 0 2 3 1" | wc -l
+./push_swap "4 0 3 1 2" | wc -l
+./push_swap "0 1 2 4 3" | wc -l
+./push_swap "0 1 3 2 4" | wc -l
+./push_swap "0 1 3 4 2" | wc -l
+./push_swap "0 1 4 2 3" | wc -l
+./push_swap "0 1 4 3 2" | wc -l
+./push_swap "0 2 1 3 4" | wc -l
+./push_swap "0 2 1 4 3" | wc -l
+./push_swap "0 2 3 1 4" | wc -l
+./push_swap "0 2 3 4 1" | wc -l
+./push_swap "0 2 4 1 3" | wc -l
+./push_swap "0 2 4 3 1" | wc -l
+./push_swap "0 3 1 2 4" | wc -l
+./push_swap "0 3 1 4 2" | wc -l
+./push_swap "0 3 2 1 4" | wc -l
+./push_swap "0 3 2 4 1" | wc -l
+./push_swap "0 3 4 1 2" | wc -l
+./push_swap "0 3 4 2 1" | wc -l
+./push_swap "0 4 1 2 3" | wc -l
+./push_swap "0 4 1 3 2" | wc -l
+./push_swap "0 4 2 1 3" | wc -l
+./push_swap "0 4 2 3 1" | wc -l
+./push_swap "0 4 3 1 2" | wc -l
+./push_swap "0 4 3 2 1" | wc -l
+./push_swap "1 0 2 3 4" | wc -l
+./push_swap "1 0 2 4 3" | wc -l
+./push_swap "1 0 3 2 4" | wc -l
+./push_swap "1 0 3 4 2" | wc -l
+./push_swap "1 0 4 2 3" | wc -l
+./push_swap "1 0 4 3 2" | wc -l
+./push_swap "1 2 0 3 4" | wc -l
+./push_swap "1 2 0 4 3" | wc -l
+./push_swap "1 2 3 0 4" | wc -l
+./push_swap "1 2 3 4 0" | wc -l
+./push_swap "1 2 4 0 3" | wc -l
+./push_swap "1 2 4 3 0" | wc -l
+./push_swap "1 3 0 2 4" | wc -l
+./push_swap "1 3 0 4 2" | wc -l
+./push_swap "1 3 2 0 4" | wc -l
+./push_swap "1 3 2 4 0" | wc -l
+./push_swap "1 3 4 0 2" | wc -l
+./push_swap "1 3 4 2 0" | wc -l
+./push_swap "1 4 0 2 3" | wc -l
+./push_swap "1 4 0 3 2" | wc -l
+./push_swap "1 4 2 0 3" | wc -l
+./push_swap "1 4 2 3 0" | wc -l
+./push_swap "1 4 3 0 2" | wc -l
+./push_swap "1 4 3 2 0" | wc -l
+./push_swap "2 0 1 3 4" | wc -l
+./push_swap "2 0 1 4 3" | wc -l
+./push_swap "2 0 3 1 4" | wc -l
+./push_swap "2 0 3 4 1" | wc -l
+./push_swap "2 0 4 1 3" | wc -l
+./push_swap "2 0 4 3 1" | wc -l
+./push_swap "2 1 0 3 4" | wc -l
+./push_swap "2 1 0 4 3" | wc -l
+./push_swap "2 1 3 0 4" | wc -l
+./push_swap "2 1 3 4 0" | wc -l
+./push_swap "2 1 4 0 3" | wc -l
+./push_swap "2 1 4 3 0" | wc -l
+./push_swap "2 3 0 1 4" | wc -l
+./push_swap "2 3 0 4 1" | wc -l
+./push_swap "2 3 1 0 4" | wc -l
+./push_swap "2 3 1 4 0" | wc -l
+./push_swap "2 3 4 0 1" | wc -l
+./push_swap "2 3 4 1 0" | wc -l
+./push_swap "2 4 0 1 3" | wc -l
+./push_swap "2 4 0 3 1" | wc -l
+./push_swap "2 4 1 0 3" | wc -l
+./push_swap "2 4 1 3 0" | wc -l
+./push_swap "2 4 3 0 1" | wc -l
+./push_swap "2 4 3 1 0" | wc -l
+./push_swap "3 0 1 2 4" | wc -l
+./push_swap "3 0 1 4 2" | wc -l
+./push_swap "3 0 2 1 4" | wc -l
+./push_swap "3 0 2 4 1" | wc -l
+./push_swap "3 0 4 1 2" | wc -l
+./push_swap "3 0 4 2 1" | wc -l
+./push_swap "3 1 0 2 4" | wc -l
+./push_swap "3 1 0 4 2" | wc -l
+./push_swap "3 1 2 0 4" | wc -l
+./push_swap "3 1 2 4 0" | wc -l
+./push_swap "3 1 4 0 2" | wc -l
+./push_swap "3 1 4 2 0" | wc -l
+./push_swap "3 2 0 1 4" | wc -l
+./push_swap "3 2 0 4 1" | wc -l
+./push_swap "3 2 1 0 4" | wc -l
+./push_swap "3 2 1 4 0" | wc -l
+./push_swap "3 2 4 0 1" | wc -l
+./push_swap "3 2 4 1 0" | wc -l
+./push_swap "3 4 0 1 2" | wc -l
+./push_swap "3 4 0 2 1" | wc -l
+./push_swap "3 4 1 0 2" | wc -l
+./push_swap "3 4 1 2 0" | wc -l
+./push_swap "3 4 2 0 1" | wc -l
+./push_swap "3 4 2 1 0" | wc -l
+./push_swap "4 0 1 2 3" | wc -l
+./push_swap "4 0 1 3 2" | wc -l
+./push_swap "4 0 2 1 3" | wc -l
+./push_swap "4 0 2 3 1" | wc -l
+./push_swap "4 0 3 1 2" | wc -l
+./push_swap "4 0 3 2 1" | wc -l
+./push_swap "4 1 0 2 3" | wc -l
+./push_swap "4 1 0 3 2" | wc -l
+./push_swap "4 1 2 0 3" | wc -l
+./push_swap "4 1 2 3 0" | wc -l
+./push_swap "4 1 3 0 2" | wc -l
+./push_swap "4 1 3 2 0" | wc -l
+./push_swap "4 2 0 1 3" | wc -l
+./push_swap "4 2 0 3 1" | wc -l
+./push_swap "4 2 1 0 3" | wc -l
+./push_swap "4 2 1 3 0" | wc -l
+./push_swap "4 2 3 0 1" | wc -l
+./push_swap "4 2 3 1 0" | wc -l
+./push_swap "4 3 0 1 2" | wc -l
+./push_swap "4 3 0 2 1" | wc -l
+./push_swap "4 3 1 0 2" | wc -l
+./push_swap "4 3 1 2 0" | wc -l
+./push_swap "4 3 2 0 1" | wc -l
+./push_swap "4 3 2 1 0" | wc -l
+
+
+./push_swap "0 1 2 3 4" | ./checker_linux "0 1 2 3 4"
+./push_swap "0 1 2 4 3" | ./checker_linux "0 1 2 4 3"
+./push_swap "0 1 3 2 4" | ./checker_linux "0 1 3 2 4"
+./push_swap "0 1 3 4 2" | ./checker_linux "0 1 3 4 2"
+./push_swap "0 1 4 2 3" | ./checker_linux "0 1 4 2 3"
+./push_swap "0 1 4 3 2" | ./checker_linux "0 1 4 3 2"
+./push_swap "0 2 1 3 4" | ./checker_linux "0 2 1 3 4"
+./push_swap "0 2 1 4 3" | ./checker_linux "0 2 1 4 3"
+./push_swap "0 2 3 1 4" | ./checker_linux "0 2 3 1 4"
+./push_swap "0 2 3 4 1" | ./checker_linux "0 2 3 4 1"
+./push_swap "0 2 4 1 3" | ./checker_linux "0 2 4 1 3"
+./push_swap "0 2 4 3 1" | ./checker_linux "0 2 4 3 1"
+./push_swap "0 3 1 2 4" | ./checker_linux "0 3 1 2 4"
+./push_swap "0 3 1 4 2" | ./checker_linux "0 3 1 4 2"
+./push_swap "0 3 2 1 4" | ./checker_linux "0 3 2 1 4"
+./push_swap "0 3 2 4 1" | ./checker_linux "0 3 2 4 1"
+./push_swap "0 3 4 1 2" | ./checker_linux "0 3 4 1 2"
+./push_swap "0 3 4 2 1" | ./checker_linux "0 3 4 2 1"
+./push_swap "0 4 1 2 3" | ./checker_linux "0 4 1 2 3"
+./push_swap "0 4 1 3 2" | ./checker_linux "0 4 1 3 2"
+./push_swap "0 4 2 1 3" | ./checker_linux "0 4 2 1 3"
+./push_swap "0 4 2 3 1" | ./checker_linux "0 4 2 3 1"
+./push_swap "0 4 3 1 2" | ./checker_linux "0 4 3 1 2"
+./push_swap "0 4 3 2 1" | ./checker_linux "0 4 3 2 1"
+./push_swap "1 0 2 3 4" | ./checker_linux "1 0 2 3 4"
+./push_swap "1 0 2 4 3" | ./checker_linux "1 0 2 4 3"
+./push_swap "1 0 3 2 4" | ./checker_linux "1 0 3 2 4"
+./push_swap "1 0 3 4 2" | ./checker_linux "1 0 3 4 2"
+./push_swap "1 0 4 2 3" | ./checker_linux "1 0 4 2 3"
+./push_swap "1 0 4 3 2" | ./checker_linux "1 0 4 3 2"
+./push_swap "1 2 0 3 4" | ./checker_linux "1 2 0 3 4"
+./push_swap "1 2 0 4 3" | ./checker_linux "1 2 0 4 3"
+./push_swap "1 2 3 0 4" | ./checker_linux "1 2 3 0 4"
+./push_swap "1 2 3 4 0" | ./checker_linux "1 2 3 4 0"
+./push_swap "1 2 4 0 3" | ./checker_linux "1 2 4 0 3"
+./push_swap "1 2 4 3 0" | ./checker_linux "1 2 4 3 0"
+./push_swap "1 3 0 2 4" | ./checker_linux "1 3 0 2 4"
+./push_swap "1 3 0 4 2" | ./checker_linux "1 3 0 4 2"
+./push_swap "1 3 2 0 4" | ./checker_linux "1 3 2 0 4"
+./push_swap "1 3 2 4 0" | ./checker_linux "1 3 2 4 0"
+./push_swap "1 3 4 0 2" | ./checker_linux "1 3 4 0 2"
+./push_swap "1 3 4 2 0" | ./checker_linux "1 3 4 2 0"
+./push_swap "1 4 0 2 3" | ./checker_linux "1 4 0 2 3"
+./push_swap "1 4 0 3 2" | ./checker_linux "1 4 0 3 2"
+./push_swap "1 4 2 0 3" | ./checker_linux "1 4 2 0 3"
+./push_swap "1 4 2 3 0" | ./checker_linux "1 4 2 3 0"
+./push_swap "1 4 3 0 2" | ./checker_linux "1 4 3 0 2"
+./push_swap "1 4 3 2 0" | ./checker_linux "1 4 3 2 0"
+./push_swap "2 0 1 3 4" | ./checker_linux "2 0 1 3 4"
+./push_swap "2 0 1 4 3" | ./checker_linux "2 0 1 4 3"
+./push_swap "2 0 3 1 4" | ./checker_linux "2 0 3 1 4"
+./push_swap "2 0 3 4 1" | ./checker_linux "2 0 3 4 1"
+./push_swap "2 0 4 1 3" | ./checker_linux "2 0 4 1 3"
+./push_swap "2 0 4 3 1" | ./checker_linux "2 0 4 3 1"
+./push_swap "2 1 0 3 4" | ./checker_linux "2 1 0 3 4"
+./push_swap "2 1 0 4 3" | ./checker_linux "2 1 0 4 3"
+./push_swap "2 1 3 0 4" | ./checker_linux "2 1 3 0 4"
+./push_swap "2 1 3 4 0" | ./checker_linux "2 1 3 4 0"
+./push_swap "2 1 4 0 3" | ./checker_linux "2 1 4 0 3"
+./push_swap "2 1 4 3 0" | ./checker_linux "2 1 4 3 0"
+./push_swap "2 3 0 1 4" | ./checker_linux "2 3 0 1 4"
+./push_swap "2 3 0 4 1" | ./checker_linux "2 3 0 4 1"
+./push_swap "2 3 1 0 4" | ./checker_linux "2 3 1 0 4"
+./push_swap "2 3 1 4 0" | ./checker_linux "2 3 1 4 0"
+./push_swap "2 3 4 0 1" | ./checker_linux "2 3 4 0 1"
+./push_swap "2 3 4 1 0" | ./checker_linux "2 3 4 1 0"
+./push_swap "2 4 0 1 3" | ./checker_linux "2 4 0 1 3"
+./push_swap "2 4 0 3 1" | ./checker_linux "2 4 0 3 1"
+./push_swap "2 4 1 0 3" | ./checker_linux "2 4 1 0 3"
+./push_swap "2 4 1 3 0" | ./checker_linux "2 4 1 3 0"
+./push_swap "2 4 3 0 1" | ./checker_linux "2 4 3 0 1"
+./push_swap "2 4 3 1 0" | ./checker_linux "2 4 3 1 0"
+./push_swap "3 0 1 2 4" | ./checker_linux "3 0 1 2 4"
+./push_swap "3 0 1 4 2" | ./checker_linux "3 0 1 4 2"
+./push_swap "3 0 2 1 4" | ./checker_linux "3 0 2 1 4"
+./push_swap "3 0 2 4 1" | ./checker_linux "3 0 2 4 1"
+./push_swap "3 0 4 1 2" | ./checker_linux "3 0 4 1 2"
+./push_swap "3 0 4 2 1" | ./checker_linux "3 0 4 2 1"
+./push_swap "3 1 0 2 4" | ./checker_linux "3 1 0 2 4"
+./push_swap "3 1 0 4 2" | ./checker_linux "3 1 0 4 2"
+./push_swap "3 1 2 0 4" | ./checker_linux "3 1 2 0 4"
+./push_swap "3 1 2 4 0" | ./checker_linux "3 1 2 4 0"
+./push_swap "3 1 4 0 2" | ./checker_linux "3 1 4 0 2"
+./push_swap "3 1 4 2 0" | ./checker_linux "3 1 4 2 0"
+./push_swap "3 2 0 1 4" | ./checker_linux "3 2 0 1 4"
+./push_swap "3 2 0 4 1" | ./checker_linux "3 2 0 4 1"
+./push_swap "3 2 1 0 4" | ./checker_linux "3 2 1 0 4"
+./push_swap "3 2 1 4 0" | ./checker_linux "3 2 1 4 0"
+./push_swap "3 2 4 0 1" | ./checker_linux "3 2 4 0 1"
+./push_swap "3 2 4 1 0" | ./checker_linux "3 2 4 1 0"
+./push_swap "3 4 0 1 2" | ./checker_linux "3 4 0 1 2"
+./push_swap "3 4 0 2 1" | ./checker_linux "3 4 0 2 1"
+./push_swap "3 4 1 0 2" | ./checker_linux "3 4 1 0 2"
+./push_swap "3 4 1 2 0" | ./checker_linux "3 4 1 2 0"
+./push_swap "3 4 2 0 1" | ./checker_linux "3 4 2 0 1"
+./push_swap "3 4 2 1 0" | ./checker_linux "3 4 2 1 0"
+./push_swap "4 0 1 2 3" | ./checker_linux "4 0 1 2 3"
+./push_swap "4 0 1 3 2" | ./checker_linux "4 0 1 3 2"
+./push_swap "4 0 2 1 3" | ./checker_linux "4 0 2 1 3"
+./push_swap "4 0 2 3 1" | ./checker_linux "4 0 2 3 1"
+./push_swap "4 0 3 1 2" | ./checker_linux "4 0 3 1 2"
+./push_swap "4 0 3 2 1" | ./checker_linux "4 0 3 2 1"
+./push_swap "4 1 0 2 3" | ./checker_linux "4 1 0 2 3"
+./push_swap "4 1 0 3 2" | ./checker_linux "4 1 0 3 2"
+./push_swap "4 1 2 0 3" | ./checker_linux "4 1 2 0 3"
+./push_swap "4 1 2 3 0" | ./checker_linux "4 1 2 3 0"
+./push_swap "4 1 3 0 2" | ./checker_linux "4 1 3 0 2"
+./push_swap "4 1 3 2 0" | ./checker_linux "4 1 3 2 0"
+./push_swap "4 2 0 1 3" | ./checker_linux "4 2 0 1 3"
+./push_swap "4 2 0 3 1" | ./checker_linux "4 2 0 3 1"
+./push_swap "4 2 1 0 3" | ./checker_linux "4 2 1 0 3"
+./push_swap "4 2 1 3 0" | ./checker_linux "4 2 1 3 0"
+./push_swap "4 2 3 0 1" | ./checker_linux "4 2 3 0 1"
+./push_swap "4 2 3 1 0" | ./checker_linux "4 2 3 1 0"
+./push_swap "4 3 0 1 2" | ./checker_linux "4 3 0 1 2"
+./push_swap "4 3 0 2 1" | ./checker_linux "4 3 0 2 1"
+./push_swap "4 3 1 0 2" | ./checker_linux "4 3 1 0 2"
+./push_swap "4 3 1 2 0" | ./checker_linux "4 3 1 2 0"
+./push_swap "4 3 2 0 1" | ./checker_linux "4 3 2 0 1"
+./push_swap "4 3 2 1 0" | ./checker_linux "4 3 2 1 0"
+
+valgrind ./push_swap " "
+valgrind ./push_swap ""
+valgrind ./push_swap " a"
+valgrind ./push_swap "1 2 3 "
+valgrind ./push_swap "99999999999999999999999999999999999"
+valgrind ./push_swap "-99999999999999999999999999999999999"
+ 
+valgrind ./push_swap "-1 -2 ++3 "
+valgrind ./push_swap " ++ "
+
+
+
+
+./push_swap "4 0 3 2 1" | wc -l
+./push_swap "4 1 0 2 3" | wc -l
+./push_swap "4 1 0 3 2" | wc -l
+./push_swap "4 1 2 0 3" | wc -l
+./push_swap "4 1 2 3 0" | wc -l
+./push_swap "4 1 3 0 2" | wc -l
+./push_swap "4 1 3 2 0" | wc -l
+./push_swap "4 2 0 1 3" | wc -l
+./push_swap "4 2 0 3 1" | wc -l
+./push_swap "4 2 1 0 3" | wc -l
+./push_swap "4 2 1 3 0" | wc -l
+./push_swap "4 2 3 0 1" | wc -l
+./push_swap "4 2 3 1 0" | wc -l
+./push_swap "4 3 0 1 2" | wc -l
+./push_swap "4 3 0 2 1" | wc -l
+./push_swap "4 3 1 0 2" | wc -l
+./push_swap "4 3 1 2 0" | wc -l
+./push_swap "4 3 2 0 1" | wc -l
+./push_swap "4 3 2 1 0" | wc -l
+valgrind --leak-check=full ./push_swap ""
+valgrind --leak-check=full ./push_swap " "
+valgrind --leak-check=full ./push_swap "   "
+valgrind --leak-check=full ./push_swap "a"
+valgrind --leak-check=full ./push_swap "1 a 2"
+valgrind --leak-check=full ./push_swap "1 2b 3"
+valgrind --leak-check=full ./push_swap "1 + 2"
+valgrind --leak-check=full ./push_swap "++1"
+valgrind --leak-check=full ./push_swap "--1"
+valgrind --leak-check=full ./push_swap "+-1"
+valgrind --leak-check=full ./push_swap "-+1"
+valgrind --leak-check=full ./push_swap "1 1"
+valgrind --leak-check=full ./push_swap "0 1 2 3 2"
+valgrind --leak-check=full ./push_swap "4 4 4"
+valgrind --leak-check=full ./push_swap "10 20 30 10"
+valgrind --leak-check=full ./push_swap "2147483648"
+valgrind --leak-check=full ./push_swap "-2147483649"
+valgrind --leak-check=full ./push_swap "99999999999999999999"
+valgrind --leak-check=full ./push_swap "-99999999999999999999"
+valgrind --leak-check=full ./push_swap "1 2 --3"
+valgrind --leak-check=full ./push_swap "+ 1 2"
+valgrind --leak-check=full ./push_swap "1 2 +3-"
+valgrind --leak-check=full ./push_swap "1 2 3 4  "
+valgrind --leak-check=full ./push_swap "   1   2 3"
+valgrind --leak-check=full ./push_swap "  1   -   2"
+valgrind --leak-check=full ./push_swap "--"
+valgrind --leak-check=full ./push_swap "++"
+valgrind --leak-check=full ./push_swap "3 1 2" | ./checker_linux "3 1 2"
+valgrind --leak-check=full ./push_swap "10 5 8 2 1" | ./checker_linux "10 5 8 2 1"
+valgrind --leak-check=full ./push_swap "4 3 2 1" | ./checker_linux "4 3 2 1"
+valgrind --leak-check=full ./push_swap "6 5 4 3 2 1 0" | ./checker_linux "6 5 4 3 2 1 0"
+valgrind --leak-check=full ./push_swap "2 1" | ./checker_linux "2 1"
+valgrind --leak-check=full ./push_swap "1" | ./checker_linux "1"
+valgrind --leak-check=full ./push_swap "1 2" | ./checker_linux "1 2"
+valgrind --leak-check=full ./push_swap "0 10 5 15 20" | ./checker_linux "0 10 5 15 20"
+valgrind --leak-check=full ./push_swap "9 8 7" | ./checker_linux "9 8 7"
+valgrind --leak-check=full ./push_swap "1 5 2 4 3" | ./checker_linux "1 5 2 4 3"
+valgrind --leak-check=full ./push_swap "10 2 30 4 50" | ./checker_linux "10 2 30 4 50"
+valgrind --leak-check=full ./push_swap "1 3 2" | ./checker_linux "1 3 2"
+valgrind --leak-check=full ./push_swap "5 10 0 20 15" | ./checker_linux "5 10 0 20 15"
+valgrind --leak-check=full ./push_swap "8 1 3 10 5 2" | ./checker_linux "8 1 3 10 5 2"
+valgrind --leak-check=full ./push_swap "100 1 200 2 300" | ./checker_linux "100 1 200 2 300"
+valgrind --leak-check=full ./push_swap "4 8 15 16" | ./checker_linux "4 8 15 16"
+valgrind --leak-check=full ./push_swap "9 18 27 36 45 0" | ./checker_linux "9 18 27 36 45 0"
+valgrind --leak-check=full ./push_swap "5 50 500 1 10" | ./checker_linux "5 50 500 1 10"
+valgrind --leak-check=full ./push_swap "7 14 21" | ./checker_linux "7 14 21"
+valgrind --leak-check=full ./push_swap "1 2 4 8 16 32" | ./checker_linux "1 2 4 8 16 32"
+valgrind --leak-check=full ./push_swap "32 16 8 4 2 1" | ./checker_linux "32 16 8 4 2 1"
+valgrind --leak-check=full ./push_swap "10 1 9 2 8 3" | ./checker_linux "10 1 9 2 8 3"
+valgrind --leak-check=full ./push_swap "3 7 11 13 17" | ./checker_linux "3 7 11 13 17"
+valgrind --leak-check=full ./push_swap "19 17 13 11 7 5" | ./checker_linux "19 17 13 11 7 5"
+valgrind --leak-check=full ./push_swap "5 8 13 21" | ./checker_linux "5 8 13 21"
+valgrind --leak-check=full ./push_swap "12 24 36 48 60 72" | ./checker_linux "12 24 36 48 60 72"
+valgrind --leak-check=full ./push_swap "10 20 30 40 50 60 70 80" | ./checker_linux "10 20 30 40 50 60 70 80"
+valgrind --leak-check=full ./push_swap "80 70 60 50 40 30 20 10" | ./checker_linux "80 70 60 50 40 30 20 10"
+valgrind --leak-check=full ./push_swap "1 10 100 1000 0 -1" | ./checker_linux "1 10 100 1000 0 -1"
+valgrind --leak-check=full ./push_swap "6 12 18 24" | ./checker_linux "6 12 18 24"
+./push_swap "100 99 98 97 96 95 94 93 92 91 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 72 71 70 69 68 67 66 65 64 63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1" | ./checker_linux "100 99 98 97 96 95 94 93 92 91 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 72 71 70 69 68 67 66 65 64 63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1"
+valgrind --leak-check=full ./push_swap "500 499 498 497 496 495 494 493 492 491 490 489 488 487 486 485 484 483 482 481 480 479 478 477 476 475 474 473 472 471 470 469 468 467 466 465 464 463 462 461 460 459 458 457 456 455 454 453 452 451 450 449 448 447 446 445 444 443 442 441 440 439 438 437 436 435 434 433 432 431 430 429 428 427 426 425 424 423 422 421 420 419 418 417 416 415 414 413 412 411 410 409 408 407 406 405 404 403 402 401 400 399 398 397 396 395 394 393 392 391 390 389 388 387 386 385 384 383 382 381 380 379 378 377 376 375 374 373 372 371 370 369 368 367 366 365 364 363 362 361 360 359 358 357 356 355 354 353 352 351 350 349 348 347 346 345 344 343 342 341 340 339 338 337 336 335 334 333 332 331 330 329 328 327 326 325 324 323 322 321 320 319 318 317 316 315 314 313 312 311 310 309 308 307 306 305 304 303 302 301 300 299 298 297 296 295 294 293 292 291 290 289 288 287 286 285 284 283 282 281 280 279 278 277 276 275 274 273 272 271 270 269 268 267 266 265 264 263 262 261 260 259 258 257 256 255 254 253 252 251 250 249 248 247 246 245 244 243 242 241 240 239 238 237 236 235 234 233 232 231 230 229 228 227 226 225 224 223 222 221 220 219 218 217 216 215 214 213 212 211 210 209 208 207 206 205 204 203 202 201 200 199 198 197 196 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 72 71 70 69 68 67 66 65 64 63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1" | ./checker_linux "500 499 498 497 496 495 494 493 492 491 490 489 488 487 486 485 484 483 482 481 480 479 478 477 476 475 474 473 472 471 470 469 468 467 466 465 464 463 462 461 460 459 458 457 456 455 454 453 452 451 450 449 448 447 446 445 444 443 442 441 440 439 438 437 436 435 434 433 432 431 430 429 428 427 426 425 424 423 422 421 420 419 418 417 416 415 414 413 412 411 410 409 408 407 406 405 404 403 402 401 400 399 398 397 396 395 394 393 392 391 390 389 388 387 386 385 384 383 382 381 380 379 378 377 376 375 374 373 372 371 370 369 368 367 366 365 364 363 362 361 360 359 358 357 356 355 354 353 352 351 350 349 348 347 346 345 344 343 342 341 340 339 338 337 336 335 334 333 332 331 330 329 328 327 326 325 324 323 322 321 320 319 318 317 316 315 314 313 312 311 310 309 308 307 306 305 304 303 302 301 300 299 298 297 296 295 294 293 292 291 290 289 288 287 286 285 284 283 282 281 280 279 278 277 276 275 274 273 272 271 270 269 268 267 266 265 264 263 262 261 260 259 258 257 256 255 254 253 252 251 250 249 248 247 246 245 244 243 242 241 240 239 238 237 236 235 234 233 232 231 230 229 228 227 226 225 224 223 222 221 220 219 218 217 216 215 214 213 212 211 210 209 208 207 206 205 204 203 202 201 200 199 198 197 196 195 194 193 192 191 190 189 188 187 186 185 184 183 182 181 180 179 178 177 176 175 174 173 172 171 170 169 168 167 166 165 164 163 162 161 160 159 158 157 156 155 154 153 152 151 150 149 148 147 146 145 144 143 142 141 140 139 138 137 136 135 134 133 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 72 71 70 69 68 67 66 65 64 63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1"
+valgrind --leak-check=full ./push_swap "1 500 2 499 3 498 4 497 5 496 6 495 7 494 8 493 9 492 10 491 11 490 12 489 13 488 14 487 15 486 16 485 17 484 18 483 19 482 20 481 21 480 22 479 23 478 24 477 25 476 26 475 27 474 28 473 29 472 30 471 31 470 32 469 33 468 34 467 35 466 36 465 37 464 38 463 39 462 40 461 41 460 42 459 43 458 44 457 45 456 46 455 47 454 48 453 49 452 50 451 51 450 52 449 53 448 54 447 55 446 56 445 57 444 58 443 59 442 60 441 61 440 62 439 63 438 64 437 65 436 66 435 67 434 68 433 69 432 70 431 71 430 72 429 73 428 74 427 75 426 76 425 77 424 78 423 79 422 80 421 81 420 82 419 83 418 84 417 85 416 86 415 87 414 88 413 89 412 90 411 91 410 92 409 93 408 94 407 95 406 96 405 97 404 98 403 99 402 100 401 101 400 102 399 103 398 104 397 105 396 106 395 107 394 108 393 109 392 110 391 111 390 112 389 113 388 114 387 115 386 116 385 117 384 118 383 119 382 120 381 121 380 122 379 123 378 124 377 125 376 126 375 127 374 128 373 129 372 130 371 131 370 132 369 133 368 134 367 135 366 136 365 137 364 138 363 139 362 140 361 141 360 142 359 143 358 144 357 145 356 146 355 147 354 148 353 149 352 150 351 151 350 152 349 153 348 154 347 155 346 156 345 157 344 158 343 159 342 160 341 161 340 162 339 163 338 164 337 165 336 166 335 167 334 168 333 169 332 170 331 171 330 172 329 173 328 174 327 175 326 176 325 177 324 178 323 179 322 180 321 181 320 182 319 183 318 184 317 185 316 186 315 187 314 188 313 189 312 190 311 191 310 192 309 193 308 194 307 195 306 196 305 197 304 198 303 199 302 200 301 201 300 202 299 203 298 204 297 205 296 206 295 207 294 208 293 209 292 210 291 211 290 212 289 213 288 214 287 215 286 216 285 217 284 218 283 219 282 220 281 221 280 222 279 223 278 224 277 225 276 226 275 227 274 228 273 229 272 230 271 231 270 232 269 233 268 234 267 235 266 236 265 237 264 238 263 239 262 240 261 241 260 242 259 243 258 244 257 245 256 246 255 247 254 248 253 249 252 250 251" | ./checker_linux "1 500 2 499 3 498 4 497 5 496 6 495 7 494 8 493 9 492 10 491 11 490 12 489 13 488 14 487 15 486 16 485 17 484 18 483 19 482 20 481 21 480 22 479 23 478 24 477 25 476 26 475 27 474 28 473 29 472 30 471 31 470 32 469 33 468 34 467 35 466 36 465 37 464 38 463 39 462 40 461 41 460 42 459 43 458 44 457 45 456 46 455 47 454 48 453 49 452 50 451 51 450 52 449 53 448 54 447 55 446 56 445 57 444 58 443 59 442 60 441 61 440 62 439 63 438 64 437 65 436 66 435 67 434 68 433 69 432 70 431 71 430 72 429 73 428 74 427 75 426 76 425 77 424 78 423 79 422 80 421 81 420 82 419 83 418 84 417 85 416 86 415 87 414 88 413 89 412 90 411 91 410 92 409 93 408 94 407 95 406 96 405 97 404 98 403 99 402 100 401 101 400 102 399 103 398 104 397 105 396 106 395 107 394 108 393 109 392 110 391 111 390 112 389 113 388 114 387 115 386 116 385 117 384 118 383 119 382 120 381 121 380 122 379 123 378 124 377 125 376 126 375 127 374 128 373 129 372 130 371 131 370 132 369 133 368 134 367 135 366 136 365 137 364 138 363 139 362 140 361 141 360 142 359 143 358 144 357 145 356 146 355 147 354 148 353 149 352 150 351 151 350 152 349 153 348 154 347 155 346 156 345 157 344 158 343 159 342 160 341 161 340 162 339 163 338 164 337 165 336 166 335 167 334 168 333 169 332 170 331 171 330 172 329 173 328 174 327 175 326 176 325 177 324 178 323 179 322 180 321 181 320 182 319 183 318 184 317 185 316 186 315 187 314 188 313 189 312 190 311 191 310 192 309 193 308 194 307 195 306 196 305 197 304 198 303 199 302 200 301 201 300 202 299 203 298 204 297 205 296 206 295 207 294 208 293 209 292 210 291 211 290 212 289 213 288 214 287 215 286 216 285 217 284 218 283 219 282 220 281 221 280 222 279 223 278 224 277 225 276 226 275 227 274 228 273 229 272 230 271 231 270 232 269 233 268 234 267 235 266 236 265 237 264 238 263 239 262 240 261 241 260 242 259 243 258 244 257 245 256 246 255 247 254 248 253 249 252 250 251"
+
+valgrind --leak-check=full ./push_swap ""
+valgrind --leak-check=full ./push_swap " " 
+valgrind --leak-check=full ./push_swap "   "
+valgrind --leak-check=full ./push_swap "	"
+
+
+valgrind --leak-check=full ./push_swap "a b c d" | ./checker_linux "a b c d"
+
+valgrind --leak-check=full ./push_swap "1 2 3 a 5" | ./checker_linux "1 2 3 a 5"
+
+valgrind --leak-check=full ./push_swap "1 2 3a 4" | ./checker_linux "1 2 3a 4"
+
+valgrind --leak-check=full ./push_swap "42 ok 100" | ./checker_linux "42 ok 100"
+
+valgrind --leak-check=full ./push_swap "1 2 +" | ./checker_linux "1 2 +"
+
+valgrind --leak-check=full ./push_swap "1 --2 3" | ./checker_linux "1 --2 3"
+
+valgrind --leak-check=full ./push_swap "1 ++2 3" | ./checker_linux "1 ++2 3"
+
+valgrind --leak-check=full ./push_swap "1 2- 3" | ./checker_linux "1 2- 3"
+valgrind --leak-check=full ./push_swap "1 -+2 3" | ./checker_linux "1 -+2 3"
+
+
+valgrind --leak-check=full ./push_swap "1 2 2147483648" | ./checker_linux "1 2 2147483648"
+
+valgrind --leak-check=full ./push_swap "1 2 -2147483649" | ./checker_linux "1 2 -2147483649"
+valgrind --leak-check=full ./push_swap "10 20 99999999999999999999 40" | ./checker_linux "10 20 99999999999999999999 40"
+
+valgrind --leak-check=full ./push_swap "10 20 -99999999999999999999 40" | ./checker_linux "10 20 -99999999999999999999 40"
+
+valgrind --leak-check=full ./push_swap "2147483647 1 -2147483648 2147483648" | ./checker_linux "2147483647 1 -2147483648 2147483648"
+
